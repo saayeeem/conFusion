@@ -25,7 +25,9 @@
                 </ul>
                 <!-- Modal Login-->
                     <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <!-- <a data-toggle="modal" data-target="#loginModal"> -->
+                     <a role="button" id="login" >
+
                     <span class="fa fa-sign-in"></span> Login</a>
                 </span>
                 <!-- Modal Login -->
@@ -44,7 +46,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                     <button type="button" class="close" id="hidel">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -83,7 +86,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Reserve a Table </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="hider">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form class="form-check" id="ReserveTable">
@@ -142,7 +145,8 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                <a role="button" class="btn btn-block btn-sm nav-link btn-warning"  data-toggle="modal" data-target="#reserveModal" href="#ReserveTable">Reserve Table</a>
+                    <a role="button" class="btn btn-block btn-sm nav-link btn-warning" id="reserve" >Reserve Table</a>
+                <!-- <a role="button" class="btn btn-block btn-sm nav-link btn-warning"  data-toggle="modal" data-target="#reserveModal" href="#ReserveTable">Reserve Table</a> -->
                      <!-- <a role="button" class="btn btn-block btn-sm nav-link btn-warning"  data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>" data-placement="bottom" href="#ReserveTable">Reserve Table</a> -->
                 </div>
             </div>
@@ -392,7 +396,9 @@
         });
     </script> -->
     <script>
-                    $("#carouselButton").click(function(){
+
+        $(document).ready(function(){
+                                 $("#carouselButton").click(function(){
                 if ($("#carouselButton").children("span").hasClass('fa-pause')) {
                     $("#mycarousel").carousel('pause');
                     $("#carouselButton").children("span").removeClass('fa-pause');
@@ -404,7 +410,26 @@
                     $("#carouselButton").children("span").addClass('fa-pause');                    
                 }
             });
+             $("#login").click(function(){
+               
+                    $("#loginModal").modal('show');
+  });
+                     $("#reserve").click(function(){
+               
+                    $("#reserveModal").modal('show');
+  });
+                       $("#hider").click(function(){
+               
+                    $("#reserveModal").modal('hide');
+  });
+                         $("#hidel").click(function(){
+               
+                    $("#loginModal").modal('hide');
+  });
+});
+            
     </script>
+
 </body>
 
 </html>
