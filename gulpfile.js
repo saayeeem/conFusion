@@ -40,7 +40,7 @@ gulp.task('browser-sync', function () {
 });
  
 // Default task
-gulp.task('default', gulp.series(['browser-sync'], async function(){
+gulp.task('default', gulp.series(['browser-sync'],async function(){
 	gulp.start('sass:watch');
 }));
 // Clean
